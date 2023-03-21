@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block body %}
+<div class="container">
+    <form action="contact" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Contact</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone">
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Comment</label>
+            <textarea class="form-control" id="content" placeholder="Your Comment" name="content" rows="3" required></textarea>
+        </div>
+        {{form.captcha}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock body %}
